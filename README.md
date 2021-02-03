@@ -32,18 +32,23 @@ As a user
 So that I can correct an error
 I want to be able to edit the Diary Entry
 ```
+```
+As a user
+So that I can reflect on a previous diary entry
+I want to be able add a Comment to a Diary Entry
+```
 
 ![user story 1](/user_story_1.png)
 
-<!-- ## How to use
+## How to use
 
 ### To set up the database
 
-Connect to `psql` and create the `bookmark_manager` database & the `bookmark_manager_test:` database;
+Connect to `psql` and create the `diary_manager` database & the `diary_manager_test:` database;
 
 ```
-CREATE DATABASE bookmark_manager;
-CREATE DATABASE bookmark_manager_test;
+CREATE DATABASE diary_manager;
+CREATE DATABASE diary_manager_test;
 ```
 
 To set up the appropriate tables, connect to each database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
@@ -54,7 +59,7 @@ To set up the appropriate tables, connect to each database in `psql` and run the
 rackup -p 3000
 ```
 
-To view bookmarks, navigate to `localhost:3000/bookmarks`.
+To view bookmarks, navigate to `localhost:3000/`.
 
 ### To run tests:
 
@@ -66,4 +71,4 @@ rspec
 
 ```
 rubocop
-``` -->
+```
