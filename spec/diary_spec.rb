@@ -12,9 +12,9 @@ describe Diary do
       diarys = Diary.all
 
       expect(diarys.count).to eq(3)
-      expect(diarys.last).to be_an_instance_of(Diary)
-      expect(diarys.first.title).to eq('Day one')
-      expect(diarys.last.entry).to eq('Dear diary day three was very hard')
+      expect(diarys).to all(be_an_instance_of(Diary))
+      expect(diarys.last.title).to eq('Day one')
+      expect(diarys.first.entry).to eq('Dear diary day three was very hard')
     end
   end
 

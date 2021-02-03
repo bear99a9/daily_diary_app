@@ -13,7 +13,7 @@ class Diary
   end
 
   def self.all
-    result = DatabaseConnection.query('SELECT * FROM diary')
+    result = DatabaseConnection.query('SELECT * FROM diary ORDER BY id desc')
     result.map do |row|
       Diary.new(id: row['id'],
                 title: row['title'],
