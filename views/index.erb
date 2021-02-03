@@ -1,0 +1,17 @@
+<h1>Welcome to your diary</h1>
+
+<form  action="/diary" method="post">
+  <input type="text" name="title" placeholder="Title">
+  <input type="text" name="entry" placeholder="Diary Entry">
+  <input type="submit" name="Save Entry">
+</form>
+
+<ul>
+<% @diary.each do |diary| %>
+  <li class="diary" id="diary-<%= diary.id %>">
+    <form  action="/diary/<%= diary.id %>" method="get">
+      <button type="submit" name="<%= diary.title %>">Title: <%= diary.title %></button>
+    </form>
+  </li>
+<% end %>
+</ul>
