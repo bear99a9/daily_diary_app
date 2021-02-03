@@ -1,0 +1,6 @@
+<form action="/diary/<%= @user_id %>/edit" method="post">
+  <input type='hidden' name='_method' value='patch'/>
+  <input type="text" name="title" placeholder="Title" required>
+  <input type="text" name="entry" placeholder="Diary Entry" required>
+  <button type="submit" name="Save">Save</button>
+</form>

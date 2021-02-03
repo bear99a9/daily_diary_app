@@ -6,7 +6,11 @@
 <form action="/diary" method="get">
   <button type="submit" name="Back">Back</button>
 </form>
-
+<br>
+<form action="/diary/<%=@user.id%>/edit" method="get">
+  <button type="submit" name="Edit">Edit</button>
+</form>
+<br>
 <form action="/diary/<%=@user.id%>/delete" method="post">
   <input type='hidden' name='_method' value='DELETE'/>
   <button type="submit" name="Delete">Delete</button>
