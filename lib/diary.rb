@@ -32,4 +32,8 @@ class Diary
       title: result[0]['title'],
       entry: result[0]['entry'])
   end
+
+  def self.delete(id:)
+    DatabaseConnection.query("delete from diary where id = #{id}")
+  end
 end

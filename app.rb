@@ -7,7 +7,11 @@ class DailyDiary < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
-  enable :sessions
+  enable :method_override, :sessions
+
+  get ('/') do
+    redirect('/diary')
+  end
 
   get ('/diary') do
     @diary = Diary.all
@@ -20,9 +24,13 @@ class DailyDiary < Sinatra::Base
   end
 
   get ('/diary/:id') do
-    p params
     @user = Diary.find(id: params[:id])
     erb :diary_entry
+  end
+
+  delete '/diary/:id/delete' do
+    Diary.delete(id: params[:id])
+    redirect ('/diary')
   end
 
 end

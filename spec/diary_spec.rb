@@ -39,4 +39,13 @@ describe Diary do
       expect(result.entry).to eq("Dear diary day one was very hard")
     end
   end
+
+  describe '.delete' do
+    it 'deletes the diary entry' do
+      diary = Diary.add(title: 'Day one', entry: "Dear diary day one was very hard")
+      Diary.delete(id: diary.id)
+
+      expect(Diary.all.count).to eq(0)
+    end
+  end
 end
